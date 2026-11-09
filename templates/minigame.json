@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "kind": "minigame",
+    "name": "",
+    "shortName": "",
+    "iconPath": "",
+    "version": "",
+    "accountType": "unknown",
+    "subjectType": "unknown",
+    "category": "",
+    "intro": "",
+    "contactEmail": "",
+    "appleAccountEmail": "",
+    "engine": "",
+    "engineEvidence": "",
+    "businessModel": "",
+    "reviewInstructions": "",
+    "updateNotes": "",
+    "releasePrompt": ""
+  },
+  "network": {
+    "technicalFacts": "",
+    "platformChoice": "unconfirmed",
+    "declarationStatus": "unknown",
+    "evidence": "",
+    "futureChanges": ""
+  },
+  "privacy": {
+    "auditStatus": "pending",
+    "sourceRevision": "",
+    "evidence": [],
+    "controlledApis": [],
+    "dataItems": [],
+    "thirdParties": [],
+    "notes": "",
+    "consentVerification": "pending"
+  },
+  "age": {
+    "suggestion": "unconfirmed",
+    "rationale": "",
+    "platformStatus": "pending",
+    "background": "",
+    "theme": "",
+    "value": "",
+    "artStyle": "",
+    "realEvent": "",
+    "socialMode": "",
+    "purchases": ""
+  },
+  "content": {
+    "scenes": "",
+    "gameplay": "",
+    "systems": []
+  },
+  "screenshots": [],
+  "requirements": {
+    "enabled": true,
+    "provenance": "实践检查模板；使用前对照当前账号页面",
+    "checkedAt": "",
+    "minBytes": 61440,
+    "maxBytes": 5242880,
+    "sceneMin": 3,
+    "gameplayMin": 3,
+    "systemMin": 3,
+    "perSystemMin": 1,
+    "duplicatePolicy": "error",
+    "requiredFields": [
+      "project.name",
+      "project.version",
+      "project.intro",
+      "project.reviewInstructions",
+      "project.updateNotes"
+    ],
+    "fieldLimits": {
+      "nameMin": 4,
+      "nameMax": 30,
+      "shortNameMax": 10,
+      "introMax": 120,
+      "updateNotesMax": 300,
+      "releasePromptMax": 15,
+      "ageBackgroundMax": 10,
+      "ageThemeMax": 10,
+      "ageValueMax": 100,
+      "sceneMin": 30,
+      "sceneMax": 800,
+      "gameplayMin": 50,
+      "gameplayMax": 800,
+      "systemDescriptionMin": 30,
+      "systemDescriptionMax": 800,
+      "iconWidth": 144,
+      "iconHeight": 144,
+      "iconMaxBytes": 2097152
+    }
+  },
+  "release": {
+    "stage": "draft",
+    "version": "",
+    "evidenceType": "none",
+    "evidence": "",
+    "observedAt": "",
+    "qualification": "unknown",
+    "contentFiling": "unknown",
+    "appFiling": "unknown",
+    "publicAccess": "unverified"
+  },
+  "notes": []
+}

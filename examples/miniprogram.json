@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "kind": "miniprogram",
+    "name": "读书清单（虚构示例）",
+    "shortName": "书单示例",
+    "iconPath": "",
+    "version": "1.0.0",
+    "accountType": "formal",
+    "subjectType": "individual",
+    "category": "依当前账号核对",
+    "intro": "记录待阅读书目与阅读进度的本地示例小程序。",
+    "contactEmail": "contact@example.com",
+    "appleAccountEmail": "",
+    "engine": "",
+    "engineEvidence": "",
+    "businessModel": "",
+    "reviewInstructions": "进入书单页面添加一本书，编辑阅读进度后重新打开查看。本案例没有实际可运行程序。",
+    "updateNotes": "示例首版包含本地书单和阅读进度，具体能力应以源码及实际运行验证。",
+    "releasePrompt": ""
+  },
+  "network": {
+    "technicalFacts": "假设数据只在本地设备保存，未接入登录、服务器或第三方 SDK。必须检查实际实现。",
+    "platformChoice": "unconfirmed",
+    "declarationStatus": "unknown",
+    "evidence": "",
+    "futureChanges": ""
+  },
+  "privacy": {
+    "auditStatus": "pending",
+    "sourceRevision": "",
+    "evidence": [],
+    "controlledApis": [],
+    "dataItems": [],
+    "thirdParties": [],
+    "notes": "书名、备注和阅读记录可能含用户输入的信息；本地保存不能直接判断为不处理个人信息。按实际字段与处理方式审计。",
+    "consentVerification": "pending"
+  },
+  "age": {
+    "suggestion": "unconfirmed",
+    "rationale": "",
+    "platformStatus": "pending",
+    "background": "",
+    "theme": "",
+    "value": "",
+    "artStyle": "",
+    "realEvent": "",
+    "socialMode": "",
+    "purchases": ""
+  },
+  "content": {
+    "scenes": "",
+    "gameplay": "",
+    "systems": []
+  },
+  "screenshots": [],
+  "requirements": {
+    "enabled": false,
+    "provenance": "实践检查模板；使用前对照当前账号页面",
+    "checkedAt": "",
+    "minBytes": 61440,
+    "maxBytes": 5242880,
+    "sceneMin": 3,
+    "gameplayMin": 3,
+    "systemMin": 3,
+    "perSystemMin": 1,
+    "duplicatePolicy": "error",
+    "requiredFields": [
+      "project.name",
+      "project.version",
+      "project.intro",
+      "project.reviewInstructions",
+      "project.updateNotes"
+    ],
+    "fieldLimits": {
+      "nameMin": 4,
+      "nameMax": 30,
+      "shortNameMax": 10,
+      "introMax": 120,
+      "updateNotesMax": 300,
+      "releasePromptMax": 15,
+      "ageBackgroundMax": 10,
+      "ageThemeMax": 10,
+      "ageValueMax": 100,
+      "sceneMin": 30,
+      "sceneMax": 800,
+      "gameplayMin": 50,
+      "gameplayMax": 800,
+      "systemDescriptionMin": 30,
+      "systemDescriptionMax": 800,
+      "iconWidth": 144,
+      "iconHeight": 144,
+      "iconMaxBytes": 2097152
+    }
+  },
+  "release": {
+    "stage": "draft",
+    "version": "",
+    "evidenceType": "none",
+    "evidence": "",
+    "observedAt": "",
+    "qualification": "unknown",
+    "contentFiling": "unknown",
+    "appFiling": "unknown",
+    "publicAccess": "unverified"
+  },
+  "notes": [
+    "普通小程序使用自己的类目、功能和隐私要求，不强套小游戏适龄与三系统表。"
+  ]
+}

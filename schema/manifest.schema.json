@@ -1,0 +1,643 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/wechat-launch-kit/manifest.schema.json",
+  "title": "WeChat Launch Kit local manifest v1",
+  "description": "Structural contract. Runtime validator adds branch, character count and evidence checks. This schema does not certify acceptance or privacy compliance.",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "project": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "minigame",
+            "miniprogram"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "accountType": {
+          "type": "string",
+          "enum": [
+            "formal",
+            "test",
+            "unknown"
+          ]
+        },
+        "subjectType": {
+          "type": "string",
+          "enum": [
+            "individual",
+            "organization",
+            "unknown"
+          ]
+        },
+        "category": {
+          "type": "string"
+        },
+        "intro": {
+          "type": "string"
+        },
+        "contactEmail": {
+          "type": "string"
+        },
+        "engine": {
+          "type": "string"
+        },
+        "engineEvidence": {
+          "type": "string"
+        },
+        "businessModel": {
+          "type": "string"
+        },
+        "reviewInstructions": {
+          "type": "string"
+        },
+        "updateNotes": {
+          "type": "string"
+        },
+        "shortName": {
+          "type": "string"
+        },
+        "iconPath": {
+          "type": "string"
+        },
+        "appleAccountEmail": {
+          "type": "string"
+        },
+        "releasePrompt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "name",
+        "version",
+        "accountType",
+        "subjectType",
+        "category",
+        "intro",
+        "contactEmail",
+        "engine",
+        "engineEvidence",
+        "businessModel",
+        "reviewInstructions",
+        "updateNotes"
+      ],
+      "additionalProperties": true
+    },
+    "network": {
+      "type": "object",
+      "properties": {
+        "technicalFacts": {
+          "type": "string"
+        },
+        "platformChoice": {
+          "type": "string",
+          "enum": [
+            "unconfirmed",
+            "offline",
+            "online"
+          ]
+        },
+        "declarationStatus": {
+          "type": "string",
+          "enum": [
+            "unknown",
+            "not-required",
+            "pending",
+            "signed"
+          ]
+        },
+        "evidence": {
+          "type": "string"
+        },
+        "futureChanges": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "technicalFacts",
+        "platformChoice",
+        "declarationStatus",
+        "evidence",
+        "futureChanges"
+      ],
+      "additionalProperties": true
+    },
+    "privacy": {
+      "type": "object",
+      "properties": {
+        "auditStatus": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "reviewed"
+          ]
+        },
+        "sourceRevision": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "controlledApis": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "purpose": {
+                "type": "string"
+              },
+              "evidence": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "purpose",
+              "evidence"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "dataItems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "purpose": {
+                "type": "string"
+              },
+              "storage": {
+                "type": "string"
+              },
+              "retention": {
+                "type": "string"
+              },
+              "deletion": {
+                "type": "string"
+              },
+              "evidence": {
+                "type": "string"
+              },
+              "autoExpires": {
+                "type": "boolean"
+              },
+              "expiryEvidence": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "purpose",
+              "storage",
+              "retention",
+              "deletion",
+              "evidence"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "thirdParties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "purpose": {
+                "type": "string"
+              },
+              "evidence": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "purpose",
+              "evidence"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "notes": {
+          "type": "string"
+        },
+        "consentVerification": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "auditStatus",
+        "sourceRevision",
+        "evidence",
+        "controlledApis",
+        "dataItems",
+        "thirdParties",
+        "notes",
+        "consentVerification"
+      ],
+      "additionalProperties": true
+    },
+    "age": {
+      "type": "object",
+      "properties": {
+        "suggestion": {
+          "type": "string"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "platformStatus": {
+          "type": "string"
+        },
+        "background": {
+          "type": "string"
+        },
+        "theme": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "artStyle": {
+          "type": "string"
+        },
+        "realEvent": {
+          "type": "string"
+        },
+        "socialMode": {
+          "type": "string"
+        },
+        "purchases": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "suggestion",
+        "rationale",
+        "platformStatus"
+      ],
+      "additionalProperties": true
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "scenes": {
+          "type": "string"
+        },
+        "gameplay": {
+          "type": "string"
+        },
+        "systems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "name",
+              "description"
+            ],
+            "additionalProperties": true
+          }
+        }
+      },
+      "required": [
+        "scenes",
+        "gameplay",
+        "systems"
+      ],
+      "additionalProperties": true
+    },
+    "screenshots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "column": {
+            "type": "string",
+            "enum": [
+              "scene",
+              "gameplay",
+              "system",
+              "other"
+            ]
+          },
+          "systemId": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "wechat-device",
+              "wechat-devtools"
+            ]
+          },
+          "version": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "capturedAt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "column",
+          "source",
+          "version",
+          "description"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "provenance": {
+          "type": "string"
+        },
+        "checkedAt": {
+          "type": "string"
+        },
+        "minBytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maxBytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sceneMin": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "gameplayMin": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "systemMin": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "perSystemMin": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "duplicatePolicy": {
+          "type": "string",
+          "enum": [
+            "error",
+            "warn"
+          ]
+        },
+        "fieldLimits": {
+          "type": "object",
+          "properties": {
+            "nameMin": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "nameMax": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "shortNameMax": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "introMax": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "updateNotesMax": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "releasePromptMax": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "ageBackgroundMax": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "ageThemeMax": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "ageValueMax": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "sceneMin": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "sceneMax": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "gameplayMin": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "gameplayMax": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "systemDescriptionMin": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "systemDescriptionMax": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "iconWidth": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "iconHeight": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "iconMaxBytes": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "requiredFields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "project.kind",
+              "project.name",
+              "project.shortName",
+              "project.iconPath",
+              "project.version",
+              "project.accountType",
+              "project.subjectType",
+              "project.category",
+              "project.intro",
+              "project.contactEmail",
+              "project.appleAccountEmail",
+              "project.engine",
+              "project.engineEvidence",
+              "project.businessModel",
+              "project.reviewInstructions",
+              "project.updateNotes",
+              "project.releasePrompt",
+              "age.suggestion",
+              "age.rationale",
+              "age.platformStatus",
+              "age.background",
+              "age.theme",
+              "age.value",
+              "age.artStyle",
+              "age.realEvent",
+              "age.socialMode",
+              "age.purchases"
+            ]
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "enabled",
+        "provenance",
+        "checkedAt",
+        "minBytes",
+        "maxBytes",
+        "sceneMin",
+        "gameplayMin",
+        "systemMin",
+        "perSystemMin",
+        "duplicatePolicy"
+      ],
+      "additionalProperties": true
+    },
+    "release": {
+      "type": "object",
+      "properties": {
+        "stage": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "saved",
+            "uploaded",
+            "submitted",
+            "approved",
+            "published"
+          ]
+        },
+        "version": {
+          "type": "string"
+        },
+        "evidenceType": {
+          "type": "string",
+          "enum": [
+            "none",
+            "user-report",
+            "platform-readback"
+          ]
+        },
+        "evidence": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string"
+        },
+        "qualification": {
+          "type": "string"
+        },
+        "contentFiling": {
+          "type": "string"
+        },
+        "appFiling": {
+          "type": "string"
+        },
+        "publicAccess": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "stage",
+        "version",
+        "evidenceType",
+        "evidence",
+        "observedAt",
+        "qualification",
+        "contentFiling",
+        "appFiling",
+        "publicAccess"
+      ],
+      "additionalProperties": true
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "project",
+    "network",
+    "privacy",
+    "age",
+    "content",
+    "screenshots",
+    "requirements",
+    "release",
+    "notes"
+  ],
+  "additionalProperties": true
+}
