@@ -120,7 +120,7 @@ Skill 会区分小程序／小游戏、测试／正式账号，复用已确认�
 - 浏览器受安全策略阻断，停止该路径，用脱敏截图和手工填写继续。没有 Cookie 提取、CDP 或 AppleScript 绕过，也没有通用自动提交器。
 - HTTP 200 只代表 HTTP 层正常；业务错误 `-10000400` 仍是失败。先保留文本、按提示正常刷新后重试一次；没有依据不能归因于认证中或某个自定义项。
 
-更多见 [流程与踩坑](docs/workflow.md)、[官方来源与时效](docs/sources.md)、[清单格式](docs/manifest.md)。
+更多见 [流程与踩坑](docs/workflow.md)、[开发者工具 CLI 授权与成功判定](docs/devtools-cli.md)、[官方来源与时效](docs/sources.md)、[清单格式](docs/manifest.md)。
 
 ## 开发与验证
 

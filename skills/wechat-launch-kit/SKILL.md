@@ -13,6 +13,8 @@ description: Prepare evidence-based WeChat Mini Program or Mini Game submission 
 
 若本技能仍位于完整仓库，工具根目录为技能目录上两级；若通过符号链接安装，先解析真实路径。若是单独复制的技能，定位用户已有的 `wechat-launch-kit` 仓库或明确缺少本地 CLI；不要假装脚本可用。读取 [references/workflow.md](references/workflow.md) 获取处理边界；按需读取工具仓库 `docs/privacy-audit.md`、`docs/sources.md`、`docs/manifest.md`。
 
+涉及微信开发者工具 CLI 启用、预览或上传排错时，先定位工具仓库并读取 [CLI 授权与成功判定](../../docs/devtools-cli.md)；服务端口、登录、项目身份、产物与平台读回分别留证，不以退出码代替业务结果。
+
 ## 资料准备
 
 1. 先形成最短事实表：类型、版本、真实玩法/功能、引擎、联网/登录/存储/SDK、现有账号状态与当前缺口。不把未来计划写成已实现。
