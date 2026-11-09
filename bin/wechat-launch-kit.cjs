@@ -18,11 +18,13 @@ init <manifest.json> [--kind minigame|miniprogram]
 validate <manifest.json> [--json] [--strict]
 generate <manifest.json> --out <新目录> [--draft] [--force]
 check-screenshots <manifest.json> [--python <解释器>] [--json]
+check-materials <manifest.json> [--python <解释器>] [--ffprobe <二进制>] [--json]
+operations-checklist <manifest.json> [--json]
 audit-source <源码目录> --out <audit.json>
 
 generate 默认拒绝有错误的清单；--draft 允许不完整文字并明显标注。
-validate 不读取截图；--strict 将待核对提醒也视为失败。
-截图路径相对于 manifest，Python 检查依赖 requirements.txt 的 Pillow。
+validate 不读取截图或运营媒体；--strict 将待核对提醒也视为失败。
+图片与视频路径相对于 manifest；图片检查依赖 requirements.txt 的 Pillow，视频检查另需本地 ffprobe。
 audit-source 只读源码，输出候选调用与文件摘要；不能代替人工隐私审计。
 工具不会登录、上传、保存后台、提交审核或发布。`);
   } else if(command==='init') {
@@ -65,6 +67,19 @@ audit-source 只读源码，输出候选调用与文件摘要；不能代替人�
     if(result.error)throw result.error;
     if(result.stdout)process.stdout.write(result.stdout);if(result.stderr)process.stderr.write(result.stderr);
     process.exitCode=result.status===null?2:result.status;
+  } else if(command==='check-materials') {
+    const python=option('--python','python3'),ffprobe=option('--ffprobe','ffprobe'),asJson=flag('--json');checkArgs(1);
+    const result=cp.spawnSync(python,[path.join(root,'scripts/check_materials.py'),path.resolve(args[0]),'--ffprobe',ffprobe,...(asJson?['--json']:[])],{encoding:'utf8',maxBuffer:10*1024*1024});
+    if(result.error)throw result.error;
+    if(result.stdout)process.stdout.write(result.stdout);if(result.stderr)process.stderr.write(result.stderr);
+    process.exitCode=result.status===null?2:result.status;
+  } else if(command==='operations-checklist') {
+    const asJson=flag('--json');checkArgs(1);const manifest=json(args[0]);
+    if(!manifest.project||!manifest.release)throw Error('缺少基础清单结构；请先 init 或导入已有清单');
+    const check=core.operations.validate(manifest);if(check.errors.length){printCheck(check);throw Error('运营／开通资料有错误，先修正后导出清单');}
+    const rows=core.operations.checklist(manifest);
+    if(asJson)output(rows);else for(const row of rows)console.log(`[${row.status}] ${row.group}/${row.id} ${row.label}\n${row.evidence||'待准备'}\n${row.note}\n`);
+    if(!rows.length&&!asJson)console.log('尚未选择广告／支付开通路线，没有生成申请材料要求。');
   } else if(command==='audit-source') {
     const out=option('--out');checkArgs(1);if(!out)throw Error('使用 --out 指定只读检查结果文件');
     const {audit}=require('../lib/audit.cjs');const report=audit(args[0]);

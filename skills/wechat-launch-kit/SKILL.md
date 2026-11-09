@@ -1,9 +1,9 @@
 ---
 name: wechat-launch-kit
-description: Prepare evidence-based WeChat Mini Program or Mini Game submission materials from real code, runtime screenshots, and current account fields; generate copy-ready manifests and review drafts, diagnose account-branch and privacy form issues. Use for submission preparation and status reconciliation, not generic web development or automatic publishing.
+description: Prepare evidence-based WeChat Mini Program or Mini Game submission materials from real code, runtime screenshots, and current account fields; generate copy-ready manifests, review drafts, post-review operating assets, advertising and payment onboarding checklists, and release-code evidence. Use for launch preparation and status reconciliation, not generic web development or automatic publishing.
 ---
 
-# 微信提审资料助手
+# 微信提审与运营资料助手
 
 将自然语言需求转成真实可填写的资料，默认用中文。复用已确认版本、主体类型、签署和提交状态；只问影响当前步骤的缺口。身份信息及登录秘密留在官方页面，不纳入公开仓库。
 
@@ -22,6 +22,16 @@ description: Prepare evidence-based WeChat Mini Program or Mini Game submission 
 5. 运行 `validate` 和 `generate`，交付 `copy-fields.html`、MD/TXT 与缺口。可用 `--draft` 导出不完整文字，但不能隐藏错误或提升状态。
 
 网页 `web/index.html` 可离线填写、导入 JSON 和导出复制字段；不自动存储资料。截图检查需要 Python/Pillow；缺依赖时明确说明，并在用户授权范围内建立独立环境。不要把被跳过的截图检查称为通过。
+
+## 审核后的运营与开通
+
+按需读取工具仓库 [docs/operations.md](../../docs/operations.md)（相对技能目录需定位仓库；复制安装时查找实际仓库）。使用可选 `operations` / `monetization`，不要求改写旧清单。运营资料覆盖游戏简介、详细介绍、封面、横竖详情图、文案、视频、分享图和智能运营计划；仅对当前账号可见栏目提出要求。通用封面实践起点为 JPEG 650×250、≤80 KB，页面建议不放图标和游戏名；先对照当前账号，其他尺寸/时长未核到则留待配置，不能套审核截图字节下限。
+
+网页添加素材与规格；`check-materials` 用 Pillow/ffprobe 读取实际尺寸、字节、格式与视频时长。缺依赖或未配置不声称通过，人工另核对文字、版权和真实性。`generate` 导出同一套可复制字段；`operations-checklist` 按选择的路线导出缺口。
+
+广告收益结算、普通小程序实物／服务支付、其他数字内容和小游戏 IAP 分开判断。个人不等于个体工商户；按当前主体资格准备材料，不把流量主开通等同玩家支付。明确长期不虚拟支付的项目保留 `payment.intent: none` 与 `longTermNoVirtualPayment: true`，不擅自新增内购或修改原声明。合同、核身、银行验证、税务、协议与付款交由用户在官方平台处理，准备清单不包含原件和机密。
+
+正式／体验／开发码分别记录，先核对是否发布，再核对普通微信用户实际扫码版本。小游戏不填普通小程序 pages 路由，不增加外壳；参数按当前小游戏接口核准，公开页不可读则明确待核对。码文件、审核通过与正式可访问分别留证。
 
 ## 关键判断
 

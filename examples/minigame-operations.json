@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "kind": "minigame",
+    "name": "纸飞机穿云（虚构示例）",
+    "shortName": "纸飞机示例",
+    "iconPath": "",
+    "version": "1.0.0",
+    "accountType": "formal",
+    "subjectType": "individual",
+    "category": "按真实账号核对休闲游戏类目",
+    "intro": "操控纸飞机穿过云层与气流，练习避障并记录本机最高分。本案例只演示资料结构。",
+    "contactEmail": "contact@example.com",
+    "appleAccountEmail": "",
+    "engine": "原生 JavaScript / Canvas 2D，自研",
+    "engineEvidence": "虚构证据：src/render.js 使用 Canvas 2D；实际项目需重新检查",
+    "businessModel": "当前免费，无广告和内购；未来变更重新核对",
+    "reviewInstructions": "无需额外账号。点击开始，左右触控移动飞机，躲避云团。点击暂停可继续或重开。示例无真实可试玩产品。",
+    "updateNotes": "首个示例版本描述单局避障、暂停、重新开始及本地最高分。所有功能仅用于演示清单填写。",
+    "releasePrompt": ""
+  },
+  "network": {
+    "technicalFacts": "假设项目本地单人运行，无服务器、登录、广告、支付或云存档；实际项目逐项核查。",
+    "platformChoice": "unconfirmed",
+    "declarationStatus": "unknown",
+    "evidence": "",
+    "futureChanges": "未来接入广告、统计或联网功能前重新核对。"
+  },
+  "privacy": {
+    "auditStatus": "pending",
+    "sourceRevision": "",
+    "evidence": [],
+    "controlledApis": [],
+    "dataItems": [
+      {
+        "name": "本地游戏记录（最高分）",
+        "purpose": "示例：为再次进入时显示最佳成绩，在本机读取和保存最高分；不上传服务器。",
+        "storage": "本设备本地缓存（示例假设）",
+        "retention": "示例代码假设未设置自动过期；用户或微信清理相应本地数据后记录可能被删除。",
+        "deletion": "未实现游戏内清空入口；宿主清理效果待真机验证。",
+        "autoExpires": false,
+        "evidence": "虚构 src/storage.js:12；必须替换为实际代码证据"
+      }
+    ],
+    "thirdParties": [],
+    "notes": "这是虚构填写示例。没有读取真实代码，不可据此认定任何项目不处理个人信息或免于授权。",
+    "consentVerification": "pending"
+  },
+  "age": {
+    "suggestion": "unconfirmed",
+    "rationale": "",
+    "platformStatus": "pending",
+    "background": "虚构天空",
+    "theme": "纸飞机避障",
+    "value": "虚构示例：练习操作与观察。实际适龄判断需核对完整内容。",
+    "artStyle": "简洁卡通（示例）",
+    "realEvent": "无真实事件（示例）",
+    "socialMode": "本地单人（示例）",
+    "purchases": "无内购（示例）"
+  },
+  "content": {
+    "scenes": "示例使用竖屏纸飞机主题画面，包含开始页、云层中的飞行对局、暂停面板和结算页。道路与云层连续移动，画面显示剩余时间和本局得分。当前假设只有一张循环地图，没有购买或地图解锁。",
+    "gameplay": "示例玩家从开始页进入一局飞行挑战，通过左右触控调整飞机位置，避开前方云团并穿过安全空隙。成功通过障碍累计分数，碰撞消耗本局耐久；耐久耗尽时结算失败，坚持到倒计时结束则完成挑战。结算展示本局分数与本机最高分，玩家可重新开始。以上只是虚构案例的功能假设，不能复制到实际不存在这些能力的游戏。",
+    "systems": [
+      {
+        "id": "control",
+        "type": "自定义系统",
+        "name": "移动与碰撞",
+        "description": "示例通过左右触控移动飞机，碰撞障碍扣除本局耐久；耐久耗尽后停止对局并进入结算。实际判定、反馈与数值应对照项目实现填写。"
+      },
+      {
+        "id": "score",
+        "type": "自定义系统",
+        "name": "计分与结算",
+        "description": "示例在通过障碍后累计分数，结算展示本局成绩与本机最高分；分数不能购买、转赠或兑换奖励，也不构成在线排行榜。"
+      },
+      {
+        "id": "settings",
+        "type": "设置系统",
+        "name": "暂停与重开",
+        "description": "示例暂停时停止角色、障碍与倒计时更新，继续后恢复当前对局；重新开始重置本局状态并保留本机最高分，真实行为需在运行版本验证。"
+      }
+    ]
+  },
+  "screenshots": [],
+  "requirements": {
+    "enabled": true,
+    "provenance": "实践检查模板；使用前对照当前账号页面",
+    "checkedAt": "",
+    "minBytes": 61440,
+    "maxBytes": 5242880,
+    "sceneMin": 3,
+    "gameplayMin": 3,
+    "systemMin": 3,
+    "perSystemMin": 1,
+    "duplicatePolicy": "error",
+    "requiredFields": [
+      "project.name",
+      "project.version",
+      "project.intro",
+      "project.reviewInstructions",
+      "project.updateNotes"
+    ],
+    "fieldLimits": {
+      "nameMin": 4,
+      "nameMax": 30,
+      "shortNameMax": 10,
+      "introMax": 120,
+      "updateNotesMax": 300,
+      "releasePromptMax": 15,
+      "ageBackgroundMax": 10,
+      "ageThemeMax": 10,
+      "ageValueMax": 100,
+      "sceneMin": 30,
+      "sceneMax": 800,
+      "gameplayMin": 50,
+      "gameplayMax": 800,
+      "systemDescriptionMin": 30,
+      "systemDescriptionMax": 800,
+      "iconWidth": 144,
+      "iconHeight": 144,
+      "iconMaxBytes": 2097152
+    }
+  },
+  "release": {
+    "stage": "draft",
+    "version": "",
+    "evidenceType": "none",
+    "evidence": "",
+    "observedAt": "",
+    "qualification": "unknown",
+    "contentFiling": "unknown",
+    "appFiling": "unknown",
+    "publicAccess": "unverified"
+  },
+  "notes": [
+    "此示例是虚构资料，未审计真实代码、未配置真实账号、未附截图、未提交审核。",
+    "结构校验可通过，提醒仍保留；需要真实证据后才能推进。",
+    "运营示例的素材路径仅为待制作占位；运行 check-materials 会因缺少文件失败。此示例不是任何真实账号资料。"
+  ],
+  "operations": {
+    "checkedAt": "",
+    "provenance": "",
+    "gameIntro": "合成示例：单人避障挑战，点击开始后躲开障碍，尝试提高本地成绩。",
+    "detailedIntro": "合成示例：通过真实实现的操作、计分和暂停功能完成短局挑战。无玩家支付；具体交互以实际项目为准。",
+    "promotionCopy": "合成示例：这一局，试试能躲开多少次障碍。",
+    "smartContentPlan": "尚未设置；确认账号入口与实际素材后再由用户决定。",
+    "materials": [
+      {
+        "id": "general-cover",
+        "label": "通用素材封面",
+        "slot": "general-cover",
+        "kind": "image",
+        "path": "materials/cover.jpg",
+        "version": "1.0.0",
+        "description": "规划占位；未附真实媒体，不代表已制作或上传。",
+        "source": "unconfirmed",
+        "contentReview": "pending",
+        "contentNotes": "",
+        "constraints": {
+          "formats": [
+            "JPEG"
+          ],
+          "width": 650,
+          "height": 250,
+          "maxBytes": 80000,
+          "checkedAt": "",
+          "provenance": "账号页面实践起点：JPEG，650×250，≤80 KB；80 KB 以 80000 字节保守检查，使用前复核本账号"
+        }
+      },
+      {
+        "id": "promotion-video",
+        "label": "推广视频",
+        "slot": "promotion-video",
+        "kind": "video",
+        "path": "materials/demo.mp4",
+        "version": "1.0.0",
+        "description": "规划占位；未附真实媒体，不代表已制作或上传。",
+        "source": "unconfirmed",
+        "contentReview": "pending",
+        "contentNotes": "",
+        "constraints": {
+          "formats": [],
+          "checkedAt": "",
+          "provenance": "待对照当前账号页面填写尺寸、字节及视频时长；不继承审核截图限制"
+        }
+      }
+    ],
+    "delivery": {
+      "qrKind": "unconfirmed",
+      "qrPath": "",
+      "entryPath": "",
+      "query": "",
+      "status": "unverified",
+      "version": "",
+      "evidenceType": "none",
+      "evidence": "",
+      "observedAt": ""
+    }
+  },
+  "monetization": {
+    "ads": {
+      "status": "preparing",
+      "eligibility": "unknown",
+      "checkedAt": "",
+      "provenance": "",
+      "version": "",
+      "evidenceType": "none",
+      "evidence": "",
+      "observedAt": "",
+      "materials": [],
+      "intent": "traffic-owner",
+      "placementPlan": "待核对当前账号可用类型；未创建广告位、未接入代码。"
+    },
+    "payment": {
+      "status": "unknown",
+      "eligibility": "unknown",
+      "checkedAt": "",
+      "provenance": "",
+      "version": "",
+      "evidenceType": "none",
+      "evidence": "",
+      "observedAt": "",
+      "materials": [],
+      "intent": "none",
+      "longTermNoVirtualPayment": true,
+      "subjectDetail": "unknown",
+      "merchantRoute": "unconfirmed",
+      "scenario": "示例项目已选择长期不接虚拟支付；无玩家购买入口。"
+    }
+  }
+}

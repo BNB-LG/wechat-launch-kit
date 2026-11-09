@@ -1,6 +1,6 @@
 # WeChat Launch Kit · 微信提审资料工具包
 
-把真实代码、页面要求和版本证据，整理为可复制的微信小程序／小游戏提审资料。包含**离线填写工作台、Node CLI、源码核查辅助、截图重复检查和可安装 Skill**。
+把真实代码、页面要求和版本证据，整理为可复制的微信小程序／小游戏提审资料。包含**离线填写工作台、Node CLI、源码核查辅助、截图重复检查、运营素材校验、广告／支付开通准备清单和可安装 Skill**。
 
 > Local-first preparation toolkit for WeChat Mini Programs and Mini Games. No login, upload, auto-submission, or approval claims. Chinese workflow; MIT licensed.
 
@@ -79,6 +79,17 @@ node bin/wechat-launch-kit.cjs audit-source /path/to/your/project --out .local/s
 
 输出相对路径、文件摘要与 `wx.*`、`fetch`、`WebSocket` 等候选调用及行号，不修改源码。会跳过隐藏目录、依赖、构建产物和大文件，并记录跳过项。它不执行应用，也不解析别名或全部 SDK 数据流；必须人工检查源码、依赖和实际网络/存储行为。不要把“没搜到”当成“没有处理信息”。隐私判断方法见 [审计说明](docs/privacy-audit.md)。
 
+## 审核后的运营与开通准备
+
+工作台还可添加游戏简介与详细介绍、通用封面、横竖推广图、推广视频、分享图、推广文案与智能内容运营计划；支持可配置像素、字节和视频时长检查。广告／流量主与玩家支付分开选择，普通小程序实物服务、数字内容与小游戏 IAP 不共用开通结论。明确长期不虚拟支付的项目可保留该约束。
+
+```sh
+node bin/wechat-launch-kit.cjs check-materials .local/manifest.private.json --python .venv/bin/python
+node bin/wechat-launch-kit.cjs operations-checklist .local/manifest.private.json --json
+```
+
+图片检查依赖 Pillow，视频检查另需本地 ffprobe；未配置限制、缺文件或缺依赖均不算完整通过。运营扩展与旧 schemaVersion 1 清单兼容，现有 `generate` 的六个文件包含运营字段与材料缺口。可参考匿名清单 `examples/minigame-operations.json`：广告资料准备中、长期不虚拟支付、媒体路径仅为待制作占位。正式码、体验码和开发预览码分别记录，发布与普通用户扫码各自验证。见 [运营、开通与交付说明](docs/operations.md)。
+
 ## 用自然语言调用 Skill
 
 将 **整个仓库**放在稳定目录，再将 `skills/wechat-launch-kit` 链接到个人技能目录（将路径替换为你的实际位置）：
@@ -119,7 +130,7 @@ npm test
 PYTHON=.venv/bin/python npm test
 ```
 
-测试覆盖两种分支、缺失证据、生成不提升状态、HTML 转义、覆盖保护、跨栏目同文件与重编码像素重复、损坏图像和路径越界。没有 Pillow 时图像测试会明确跳过；发布前应安装依赖并确保无跳过。没有真实账号的 E2E 上传／提审测试，也没有法律合规认证。
+测试覆盖两种分支、缺失证据、生成不提升状态、HTML 转义、覆盖保护、跨栏目同文件与重编码像素重复、损坏图像和路径越界，以及运营 JPEG／视频真实解码、时长、支付分流与范围冲突。没有 Pillow 时图像测试会明确跳过；没有 ffmpeg/ffprobe 时视频测试会明确跳过；发布前应安装依赖并确保无跳过。没有真实账号的 E2E 上传／提审测试，也没有法律合规认证。
 
 本次运行环境、自动回归与边界记录在 [本地验证记录](docs/verification.md)。
 

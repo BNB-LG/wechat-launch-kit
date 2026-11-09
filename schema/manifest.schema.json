@@ -625,6 +625,486 @@
       "items": {
         "type": "string"
       }
+    },
+    "operations": {
+      "type": "object",
+      "properties": {
+        "checkedAt": {
+          "type": "string"
+        },
+        "provenance": {
+          "type": "string"
+        },
+        "gameIntro": {
+          "type": "string"
+        },
+        "promotionCopy": {
+          "type": "string"
+        },
+        "smartContentPlan": {
+          "type": "string"
+        },
+        "materials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "contentNotes": {
+                "type": "string"
+              },
+              "slot": {
+                "type": "string",
+                "enum": [
+                  "general-cover",
+                  "detail-vertical",
+                  "detail-horizontal",
+                  "promotion-article-image",
+                  "promotion-video",
+                  "share-image",
+                  "other"
+                ]
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "video"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "enum": [
+                  "unconfirmed",
+                  "game-capture",
+                  "original-design",
+                  "licensed",
+                  "mixed"
+                ]
+              },
+              "contentReview": {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "reviewed"
+                ]
+              },
+              "constraints": {
+                "type": "object",
+                "properties": {
+                  "formats": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "JPEG",
+                        "PNG",
+                        "WEBP",
+                        "MP4",
+                        "MOV",
+                        "WEBM"
+                      ]
+                    }
+                  },
+                  "width": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "height": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "minBytes": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "maxBytes": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "minDurationSeconds": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "maxDurationSeconds": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "checkedAt": {
+                    "type": "string"
+                  },
+                  "provenance": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "formats",
+                  "checkedAt",
+                  "provenance"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "id",
+              "label",
+              "path",
+              "version",
+              "description",
+              "contentNotes",
+              "slot",
+              "kind",
+              "source",
+              "contentReview",
+              "constraints"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "delivery": {
+          "type": "object",
+          "properties": {
+            "qrPath": {
+              "type": "string"
+            },
+            "entryPath": {
+              "type": "string"
+            },
+            "query": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "string"
+            },
+            "observedAt": {
+              "type": "string"
+            },
+            "qrKind": {
+              "type": "string",
+              "enum": [
+                "unconfirmed",
+                "release",
+                "trial",
+                "development"
+              ]
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "unverified",
+                "verified"
+              ]
+            },
+            "evidenceType": {
+              "type": "string",
+              "enum": [
+                "none",
+                "user-report",
+                "platform-readback"
+              ]
+            }
+          },
+          "required": [
+            "qrPath",
+            "entryPath",
+            "query",
+            "version",
+            "evidence",
+            "observedAt",
+            "qrKind",
+            "status",
+            "evidenceType"
+          ],
+          "additionalProperties": true
+        },
+        "detailedIntro": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "checkedAt",
+        "provenance",
+        "gameIntro",
+        "promotionCopy",
+        "smartContentPlan",
+        "materials",
+        "delivery",
+        "detailedIntro"
+      ],
+      "additionalProperties": true
+    },
+    "monetization": {
+      "type": "object",
+      "properties": {
+        "ads": {
+          "type": "object",
+          "properties": {
+            "checkedAt": {
+              "type": "string"
+            },
+            "provenance": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "string"
+            },
+            "observedAt": {
+              "type": "string"
+            },
+            "evidenceType": {
+              "type": "string",
+              "enum": [
+                "none",
+                "user-report",
+                "platform-readback"
+              ]
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "unknown",
+                "preparing",
+                "submitted",
+                "approved",
+                "enabled"
+              ]
+            },
+            "eligibility": {
+              "type": "string",
+              "enum": [
+                "unknown",
+                "eligible",
+                "ineligible"
+              ]
+            },
+            "materials": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "pending",
+                      "ready",
+                      "not-required"
+                    ]
+                  },
+                  "evidence": {
+                    "type": "string"
+                  },
+                  "intent": {
+                    "type": "string",
+                    "enum": [
+                      "unconfirmed",
+                      "none",
+                      "traffic-owner"
+                    ]
+                  }
+                },
+                "required": [
+                  "id",
+                  "status",
+                  "evidence",
+                  "intent"
+                ],
+                "additionalProperties": true
+              }
+            },
+            "intent": {
+              "type": "string",
+              "enum": [
+                "unconfirmed",
+                "none",
+                "traffic-owner"
+              ]
+            },
+            "placementPlan": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "checkedAt",
+            "provenance",
+            "version",
+            "evidence",
+            "observedAt",
+            "evidenceType",
+            "status",
+            "eligibility",
+            "materials",
+            "intent",
+            "placementPlan"
+          ],
+          "additionalProperties": true
+        },
+        "payment": {
+          "type": "object",
+          "properties": {
+            "checkedAt": {
+              "type": "string"
+            },
+            "provenance": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "string"
+            },
+            "observedAt": {
+              "type": "string"
+            },
+            "evidenceType": {
+              "type": "string",
+              "enum": [
+                "none",
+                "user-report",
+                "platform-readback"
+              ]
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "unknown",
+                "preparing",
+                "submitted",
+                "approved",
+                "enabled"
+              ]
+            },
+            "eligibility": {
+              "type": "string",
+              "enum": [
+                "unknown",
+                "eligible",
+                "ineligible"
+              ]
+            },
+            "materials": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "pending",
+                      "ready",
+                      "not-required"
+                    ]
+                  },
+                  "evidence": {
+                    "type": "string"
+                  },
+                  "intent": {
+                    "type": "string",
+                    "enum": [
+                      "unconfirmed",
+                      "none",
+                      "physical-goods-services",
+                      "game-iap",
+                      "other-digital"
+                    ]
+                  }
+                },
+                "required": [
+                  "id",
+                  "status",
+                  "evidence",
+                  "intent"
+                ],
+                "additionalProperties": true
+              }
+            },
+            "intent": {
+              "type": "string",
+              "enum": [
+                "unconfirmed",
+                "none",
+                "physical-goods-services",
+                "game-iap",
+                "other-digital"
+              ]
+            },
+            "longTermNoVirtualPayment": {
+              "type": "boolean"
+            },
+            "subjectDetail": {
+              "type": "string",
+              "enum": [
+                "unknown",
+                "individual",
+                "sole-proprietor",
+                "enterprise",
+                "public-institution",
+                "government",
+                "social-organization"
+              ]
+            },
+            "merchantRoute": {
+              "type": "string",
+              "enum": [
+                "unconfirmed",
+                "new",
+                "existing"
+              ]
+            },
+            "scenario": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "checkedAt",
+            "provenance",
+            "version",
+            "evidence",
+            "observedAt",
+            "evidenceType",
+            "status",
+            "eligibility",
+            "materials",
+            "intent",
+            "longTermNoVirtualPayment",
+            "subjectDetail",
+            "merchantRoute",
+            "scenario"
+          ],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "ads",
+        "payment"
+      ],
+      "additionalProperties": true
     }
   },
   "required": [

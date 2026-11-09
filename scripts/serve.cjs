@@ -1,7 +1,7 @@
 'use strict';
 const http=require('node:http'),fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'..'),port=Number(process.env.PORT||4173);
-const allow=new Set(['/web/index.html','/web/app.js','/lib/core.js']);
+const allow=new Set(['/web/index.html','/web/app.js','/lib/core.js','/lib/operations.js']);
 const server=http.createServer((req,res)=>{
   let name;try{name=decodeURIComponent(new URL(req.url,'http://127.0.0.1').pathname);}catch{res.writeHead(400).end();return;}
   if(name==='/'){res.writeHead(302,{Location:'/web/index.html'}).end();return;}

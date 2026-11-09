@@ -42,3 +42,7 @@
 `requirements.enabled: false` 关闭小游戏截图数量要求；截图文件若已提供仍会检查格式与重复。`duplicatePolicy: "warn"` 只改变完全重复的严重级别，不会把重复判为新画面。源码审计与截图检查输出中所有路径都是相对路径。
 
 退出码：`0` 表示该项检查无错误；`1` 为校验问题（或严格模式有提醒）；`2` 为命令、解析、依赖或 IO 错误。`generate --draft` 可生成未完成草稿但保留退出码 1，便于自动流程识别。
+
+## 可选运营与商业化扩展
+
+`operations` 包含运营介绍、推广文案、智能运营计划、`materials` 与扫码交付 `delivery`。`monetization.ads/payment` 分别记录开通意图、资格、证据与材料准备状态；缺少这两个对象的旧清单仍然有效。新建清单提供空扩展。具体字段、可配置素材限制、材料 ID、长期不虚拟支付约束与 CLI 用法见 [operations.md](operations.md)；JSON Schema 同时覆盖新旧结构。

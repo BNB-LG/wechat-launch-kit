@@ -54,6 +54,57 @@
     "systems": []
   },
   "screenshots": [],
+  "operations": {
+    "checkedAt": "",
+    "provenance": "",
+    "gameIntro": "",
+    "detailedIntro": "",
+    "promotionCopy": "",
+    "smartContentPlan": "",
+    "materials": [],
+    "delivery": {
+      "qrKind": "unconfirmed",
+      "qrPath": "",
+      "entryPath": "",
+      "query": "",
+      "status": "unverified",
+      "version": "",
+      "evidenceType": "none",
+      "evidence": "",
+      "observedAt": ""
+    }
+  },
+  "monetization": {
+    "ads": {
+      "status": "unknown",
+      "eligibility": "unknown",
+      "checkedAt": "",
+      "provenance": "",
+      "version": "",
+      "evidenceType": "none",
+      "evidence": "",
+      "observedAt": "",
+      "materials": [],
+      "intent": "unconfirmed",
+      "placementPlan": ""
+    },
+    "payment": {
+      "status": "unknown",
+      "eligibility": "unknown",
+      "checkedAt": "",
+      "provenance": "",
+      "version": "",
+      "evidenceType": "none",
+      "evidence": "",
+      "observedAt": "",
+      "materials": [],
+      "intent": "unconfirmed",
+      "longTermNoVirtualPayment": false,
+      "subjectDetail": "unknown",
+      "merchantRoute": "unconfirmed",
+      "scenario": ""
+    }
+  },
   "requirements": {
     "enabled": false,
     "provenance": "实践检查模板；使用前对照当前账号页面",

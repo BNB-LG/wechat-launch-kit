@@ -1,6 +1,6 @@
 interface:
-  display_name: "微信提审资料助手"
-  short_description: "从真实代码、运行截图和账号状态整理小程序与小游戏的可复制提审资料"
-  default_prompt: "使用 $wechat-launch-kit 核对我的真实功能与账号分支，整理可复制的微信提审资料并列出未验证项。"
+  display_name: "微信提审与运营资料助手"
+  short_description: "整理小程序与小游戏提审、运营素材、广告支付开通清单与发布扫码证据"
+  default_prompt: "使用 $wechat-launch-kit 核对我的真实功能与账号分支，整理可复制的提审与运营资料、开通材料清单，并列出未验证项。"
 policy:
   allow_implicit_invocation: true
